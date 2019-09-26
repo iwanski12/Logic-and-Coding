@@ -40,7 +40,7 @@ import java.util.Scanner;
 public class whileLoops
 {
  public static void main( String args[] ) {
-    int i;
+   /* int i;
     double j,k,l;
     System.out.println("Choose an Option");
     Scanner keys=new Scanner(System.in);
@@ -81,13 +81,33 @@ else if(i==2){
     
   System.out.println("The program has been closed");  
 
-        
-    
-    
-    
+        */
+       
+  int n,d,j;
+ System.out.println("Enter a Numerator");
+ Scanner Keys=new Scanner(System.in);
+ n=Keys.nextInt();
+ System.out.println("Numerator:" +n);
+ System.out.println("Enter a Denominator");
+ d=Keys.nextInt();
+ System.out.println("Denominator:" +d);
+ j=Keys.nextInt();
+ 
+ while(j+n<=n){
+     n=n-j;
+     
+     
+     
+     
+     
+ 
+ 
 
-            
-        
-        
+ 
+ 
+ 
+
+} 
 }
 }
+
