@@ -35,7 +35,7 @@ public class While_loop
 } 
 }
 }
-// I accidentally made 2 classes, the bove code does not work but the following code does
+// I accidentally made 2 classes, the above code does not work but the following code does. I did not have time last friday to finish the practice excercises
 import java.util.Scanner;
 public class whileLoops
 {
@@ -83,7 +83,7 @@ else if(i==2){
 
         */
        
-  int n,d,j;
+ int n,d,p;
  System.out.println("Enter a Numerator");
  Scanner Keys=new Scanner(System.in);
  n=Keys.nextInt();
@@ -91,23 +91,16 @@ else if(i==2){
  System.out.println("Enter a Denominator");
  d=Keys.nextInt();
  System.out.println("Denominator:" +d);
- j=Keys.nextInt();
+ p=Keys.nextInt();
  
- while(j+n<=n){
-     n=n-j;
-     
-     
-     
-     
-     
- 
- 
-
- 
- 
- 
+ while(p+n<=n){
+     n=n-p;
+     p++;
+    }
+    System.out.println(n+"/"+d+" is "+p+" "+n+"/"+d);
 
 } 
 }
-}
+
+//I did not have time to finsih this program and the rest of the programs
 
