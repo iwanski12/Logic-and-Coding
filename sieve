@@ -1,8 +1,8 @@
 import java.util.Arrays;
-
+//commented out notes are just for my organization
 
 public class PrimeSieve {
-    public static boolean[] sieve = new boolean [10];
+    public static boolean[] sieve = new boolean [1000];
     public static void main(String[] args) {
         Arrays.fill(sieve, true); //sets all values to true
         sieve[0] = false;
@@ -23,20 +23,42 @@ for(int a=0; a<sieve.length; a++){
 else{
 }
 }
+int[]result = collectPrimes();
+printPrimeFactors(132,result);
+}
+public static int[] collectPrimes(){//finding all prime numbers in array
+    int count =0;
+    for(int i=0; i< sieve.length; i++) {
+        if(sieve[i] == true){ 
+            count++;//counts all primes in array, thus giving population number of array
+        }
+    }
+    int[] collectPrimesArray= new int [count];
+    int v=0;
+    for(int a=0; a<=sieve.length; a++){
+             if(sieve[a]==true){//if sieve at pos a is prime
+                          collectPrimesArray[v]=(a);
+                          v++;//v assigns position to prime number
+                        }
 } 
-public static void printPrimeFactors(int d){
+return collectPrimesArray;
+}
+public static void printPrimeFactors(int d, int[] result){
     for(int b=0; b<d; b++){
-        if(sieve[b]==true){
             int f=0;
-     
-            while(d%b==0){
-                int c=d/b;
+int s= result[b];
+int h=d;
+            while(d%s==0){//d is our number that we are dividing
+                int c=d/s; //is isour prime number
                 d=c;
  
                 f++;//counts how many times d is divided by b
     
 }
-System.out.println(b + ":" + f);
+if(h%s==0){ //h is the new value of d
+System.out.println(s + ":" + f);
+}
+else{
 }
 }
 }
