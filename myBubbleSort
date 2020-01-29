@@ -1,0 +1,23 @@
+public class myBubbleSort{
+    public static void main(String args[]){
+   
+    int[]mainArray=new int[]{24,-12,1000,-3,0,0,-45,67,312,82,4,9,1001,45,56,-1002};
+     bubbleSort(mainArray);  
+    System.out.println(java.util.Arrays.toString(mainArray));
+    }
+    public static void swap(int[]A, int i, int j){
+            int temp=A[i];
+            A[i]=A[j];
+            A[j]=temp;
+        }
+    public static void bubbleSort(int[]B){
+        for(int i=0; i<B.length-1; i++){
+            for(int j=0; j<B.length-1-i; j++){
+                if(B[j]>B[j+1]){
+                    swap(B,j,j+1);
+                }
+            }
+        }
+    }
+}
+        
