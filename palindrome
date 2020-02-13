@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Pally{
+    
+    public static void main(String[] args){
+        Scanner keys = new Scanner(System.in);
+        System.out.println("Enter your palindrome-ish phrase with no spaces.");
+        String myPhrase = keys.nextLine();
+        int n=myPhrase.length()-1;
+        int m=0;
+        
+        
+        boolean result = palindrome(myPhrase, n, m);
+        System.out.println("Is it a palindrome? " + result);
+    }
+    
+    public static boolean palindrome( String myPhrase, int n, int m){
+       while(n>=m){
+           if(myPhrase.charAt(m++)==myPhrase.charAt(n--)){
+               //m++;
+               //n--;
+              
+               palindrome(myPhrase,m,n);
+               return true;
+            }
+               else{
+                   return false;
+                }
+           
+            }
+            return true;
+    }
+    }
+
+     
