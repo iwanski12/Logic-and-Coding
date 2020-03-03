@@ -19,45 +19,56 @@ public class ArrayList{
     //Precondition: 0 <= index <= last
     //return the element at that index
       public int get(int index){
-    while (index<=last && index>=0){
-        
-        return data[index];
-    }
-
+    
+return data[index];
     }
 
     //Precondition:  0 <= index <= last
     //sets the value at index to the newValue
     public void set(int index, int newValue){
-        while (index<=last && index>=0){
+      
        newValue=data[index]; 
     }
-    }
+    
 
 
     //Precondition:  0 <= index <= last
     //value at index is removed from the list – all elements shift down
     //returns removed value
     public int remove(int index){ 
-          while (index<=last && index>=0){
+          int temp = data[index];// saves removed value before it gets removed
+       
+            
+        for(int i=index; i<=data.length-1; i++){//everything after index moves
         data[index-1]=data[index];
-        last=last-1;
     }
-        return data[index];
-        //needs to be a loop
-    }
+        
+    
+        last=last-1;// decreases length of array by 1
+       
+     
+     return temp;
+}
 
     //Precondition:  0 <= index <= last+1
     //Inserts newValue at index.  Everything from index on gets shifted up
     public void add(int index, int newValue){
-          while (index<=last && index>=0){
-        data[index
-        
+      int temp=data[index];
+        if(last==data.length-1){
+           resize();
+        }
+        else{
+            data[index]=newValue;
+            for(int i=index; i<=data.length-1; i++){
+                data[index+1]=temp; //original values get shifted up one position
+            }
+        last=last+1;
+       
     }
-
 }
     //adds newValue to the end of the list
     public void add(int newValue){
+        add(last+1,newValue);
         
     }
 
@@ -66,20 +77,42 @@ public class ArrayList{
     //This is intentional.
     //This method should double the capacity
     private void resize(){
-        
+        int[]temp=new int[2*data.length];
+        for(int i=0; i<=temp.length-1; i++){
+            temp[i]=data[i];
     }
 
-
+}
     //returns, for example, "[3, 6, 7, 9]"
     //This will be helpful for your debugging
     public String toString(){
-        
+        String result="[";
+        for(int i=0; i<last; i++){
+            int entry =data[i];
+        return result+result+entry+",";
     }
-
+    if(last == -1){
+        return (result + "]");
+    }
+     result=result+"]";
+     return result;
+}
 
     //returns true if two lists have exactly the same elements
     //in exactly the same order
     public boolean equals(ArrayList otherList){
-        
+        if(this.size()!=otherList.size()){
+            return false;
+        }
+//"this" is for general instances
+        for(int i=0; i<this.size(); i++){
+        if(this.get(i)!=otherList.get(i)){
+            return false;
+            
+        }
     }
+    return true;
+    }
+    
 }
+
